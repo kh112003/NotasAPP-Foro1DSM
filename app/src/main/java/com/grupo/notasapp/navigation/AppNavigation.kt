@@ -9,7 +9,7 @@ import androidx.navigation.navArgument
 import com.grupo.notasapp.screens.BienvenidaScreen
 import com.grupo.notasapp.screens.LoginScreen
 import com.grupo.notasapp.screens.NotasScreen
-import com.grupo.notasapp.screens.ResultadoScreen
+import com.grupo.notasapp.screens.ResultadosScreen
 
 // Rutas de navegación
 object Rutas {
@@ -70,7 +70,7 @@ fun AppNavigation() {
             arguments = listOf(navArgument("promedio") { type = NavType.FloatType })
         ) { backStackEntry ->
             val promedio = backStackEntry.arguments?.getFloat("promedio") ?: 0f
-            ResultadoScreen(
+            ResultadosScreen(
                 promedio = promedio,
                 onVolverANotas = {
                     navController.popBackStack("notas/{correo}", inclusive = false)
