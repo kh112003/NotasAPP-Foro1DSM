@@ -79,14 +79,13 @@ fun NotasScreen(
 
                 Spacer(modifier = Modifier.height(24.dp))
 
+            // Nota 1
                 OutlinedTextField(
                     value = nota1,
                     onValueChange = { input ->
-                        if (input.all { it.isDigit() }) {
-                            val numero = input.toIntOrNull()
-                            if (numero == null || numero in 0..10) {
-                                nota1 = input
-                            }
+                        val numero = input.toFloatOrNull()
+                        if (numero == null || (numero in 0.0..10.0)) {
+                            nota1 = input
                         }
                         if (input.isEmpty()) nota1 = input
                     },
@@ -98,14 +97,13 @@ fun NotasScreen(
 
                 Spacer(modifier = Modifier.height(12.dp))
 
+            // Nota 2
                 OutlinedTextField(
                     value = nota2,
                     onValueChange = { input ->
-                        if (input.all { it.isDigit() }) {
-                            val numero = input.toIntOrNull()
-                            if (numero == null || numero in 0..10) {
-                                nota2 = input
-                            }
+                        val numero = input.toFloatOrNull()
+                        if (numero == null || (numero in 0.0..10.0)) {
+                            nota2 = input
                         }
                         if (input.isEmpty()) nota2 = input
                     },
@@ -117,14 +115,13 @@ fun NotasScreen(
 
                 Spacer(modifier = Modifier.height(12.dp))
 
+            // Nota 3    
                 OutlinedTextField(
                     value = nota3,
                     onValueChange = { input ->
-                        if (input.all { it.isDigit() }) {
-                            val numero = input.toIntOrNull()
-                            if (numero == null || numero in 0..10) {
-                                nota3 = input
-                            }
+                        val numero = input.toFloatOrNull()
+                        if (numero == null || (numero in 0.0..10.0)) {
+                            nota3 = input
                         }
                         if (input.isEmpty()) nota3 = input
                     },
