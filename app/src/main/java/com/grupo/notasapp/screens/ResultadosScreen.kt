@@ -19,18 +19,16 @@ fun ResultadosScreen(
     onVolverANotas: () -> Unit,
     onCerrarSesion: () -> Unit
 ) {
-
-
-    val colorResultado = when {
-        promedio >= 7 -> Color(0xFF16A34A)
-        promedio >= 5 -> Color(0xFFF59E0B)
-        else -> Color(0xFFDC2626)
+    val colorResultado = if (promedio >= 6) {
+        Color(0xFF16A34A) // Verde para aprobado
+    } else {
+        Color(0xFFDC2626) // Rojo para reprobado
     }
 
-    val textoEstado = when {
-        promedio >= 6 -> "Aprobado"
-        promedio >= 5 -> "Regular ️"
-        else -> "Reprobado"
+    val textoEstado = if (promedio >= 6) {
+        "Aprobado"
+    } else {
+        "Reprobado"
     }
 
     Box(
@@ -46,7 +44,6 @@ fun ResultadosScreen(
             )
             .statusBarsPadding()
     ) {
-
         Column(
             modifier = Modifier
                 .align(Alignment.Center)
@@ -56,7 +53,6 @@ fun ResultadosScreen(
                 .padding(28.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-
             Text(
                 text = "Resultado final",
                 fontSize = 24.sp,
@@ -66,7 +62,6 @@ fun ResultadosScreen(
 
             Spacer(modifier = Modifier.height(16.dp))
 
-
             Text(
                 text = "%.2f".format(promedio),
                 fontSize = 42.sp,
@@ -75,7 +70,6 @@ fun ResultadosScreen(
 
             Spacer(modifier = Modifier.height(8.dp))
 
-
             Text(
                 text = textoEstado,
                 fontSize = 16.sp,
@@ -83,7 +77,6 @@ fun ResultadosScreen(
             )
 
             Spacer(modifier = Modifier.height(32.dp))
-
 
             OutlinedButton(
                 onClick = onVolverANotas,
@@ -94,7 +87,6 @@ fun ResultadosScreen(
             }
 
             Spacer(modifier = Modifier.height(12.dp))
-
 
             Button(
                 onClick = onCerrarSesion,
