@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 package com.grupo.notasapp.screens
 
 import androidx.compose.foundation.background
@@ -21,20 +19,17 @@ fun ResultadosScreen(
     onVolverANotas: () -> Unit,
     onCerrarSesion: () -> Unit
 ) {
-
-
     val colorResultado = if (promedio >= 6) {
-    Color(0xFF16A34A) // Verde para aprobado
-} else {
-    Color(0xFFDC2626) // Rojo para reprobado
-}
+        Color(0xFF16A34A) // Verde para aprobado
+    } else {
+        Color(0xFFDC2626) // Rojo para reprobado
+    }
 
-val textoEstado = if (promedio >= 6) {
-    "Aprobado"
-} else {
-    "Reprobado"
-}
-
+    val textoEstado = if (promedio >= 6) {
+        "Aprobado"
+    } else {
+        "Reprobado"
+    }
 
     Box(
         modifier = Modifier
@@ -49,7 +44,6 @@ val textoEstado = if (promedio >= 6) {
             )
             .statusBarsPadding()
     ) {
-
         Column(
             modifier = Modifier
                 .align(Alignment.Center)
@@ -59,7 +53,6 @@ val textoEstado = if (promedio >= 6) {
                 .padding(28.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-
             Text(
                 text = "Resultado final",
                 fontSize = 24.sp,
@@ -69,7 +62,6 @@ val textoEstado = if (promedio >= 6) {
 
             Spacer(modifier = Modifier.height(16.dp))
 
-
             Text(
                 text = "%.2f".format(promedio),
                 fontSize = 42.sp,
@@ -78,7 +70,6 @@ val textoEstado = if (promedio >= 6) {
 
             Spacer(modifier = Modifier.height(8.dp))
 
-
             Text(
                 text = textoEstado,
                 fontSize = 16.sp,
@@ -86,7 +77,6 @@ val textoEstado = if (promedio >= 6) {
             )
 
             Spacer(modifier = Modifier.height(32.dp))
-
 
             OutlinedButton(
                 onClick = onVolverANotas,
@@ -97,7 +87,6 @@ val textoEstado = if (promedio >= 6) {
             }
 
             Spacer(modifier = Modifier.height(12.dp))
-
 
             Button(
                 onClick = onCerrarSesion,
@@ -114,4 +103,3 @@ val textoEstado = if (promedio >= 6) {
         }
     }
 }
->>>>>>> Stashed changes
